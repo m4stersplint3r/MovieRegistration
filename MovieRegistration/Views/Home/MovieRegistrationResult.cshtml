@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "Movie Registration Result";
+}
+@model Movie
+<h1>@ViewData["Title"]</h1>
+
+<h3>@Model.Title has been registered with the following details</h3>
+<h3>Genre: @Model.MovieGenre</h3>
+<h3>Year: @Model.Year</h3>
+<h3>
+    Actors: @Model.Actors
+
+</h3>
+<h3>
+    Directors:@Model.Directors
+</h3>

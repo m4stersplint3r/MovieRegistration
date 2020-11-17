@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Movie Registration";
+}
+@model Movie
+<h1>Movie Registration</h1>
+
+<form action="MovieRegistrationResult" method="post">
+
+    <p>@Html.LabelFor(m => m.Title): <input type="text" name="Title" value="@Model.Title"/></p>
+    <div style="color: red">@Html.ValidationMessageFor(m => m.Title)</div>
+    <p>
+        Genre:
+        @Html.DropDownList("MovieGenre",
+        new SelectList(Enum.GetValues(typeof(Genre))),
+        "--Choose Genre--",
+        new { @class = "drop-down" })
+    </p>
+    <p>Release @Html.LabelFor(m => m.Year): <input type="number" name="Year" value="@Model.Year" required/></p>
+    <div style="color: red">@Html.ValidationMessageFor(m => m.Year)</div>
+    <p>Actors: <input type="text" name="Actors" value="@Model.Actors" /></p>
+    <p>Directors: <input type="text" name="Directors" value="@Model.Directors" /></p>
+    <input type="submit" value="Add Movie" />
+</form>
